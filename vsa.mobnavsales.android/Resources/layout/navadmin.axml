@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/WP_Office10">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+        <ImageButton
+            android:src="@drawable/icon_button_round_green2"
+            android:layout_width="27.0dp"
+            android:layout_height="32.0dp"
+            android:id="@+id/imgbtn1"
+            android:cropToPadding="false"
+            android:scaleType="centerInside"
+            style="@android:style/Animation"
+            android:background="@android:color/white"
+            android:clickable="true"
+            android:soundEffectsEnabled="true" />
+        <TextView
+            android:text="Navision Credential Setup"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="296.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView1"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout2">
+        <ImageButton
+            android:src="@drawable/icon_button_darkblue1"
+            android:layout_width="27.0dp"
+            android:layout_height="32.0dp"
+            android:id="@+id/imgbtn2"
+            android:cropToPadding="false"
+            android:scaleType="centerInside"
+            style="@android:style/Animation"
+            android:background="@android:color/white"
+            android:clickable="true"
+            android:soundEffectsEnabled="true" />
+        <TextView
+            android:text="Setup Offline Mode Companies"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="273.5dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView1"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout3">
+        <ImageButton
+            android:src="@drawable/icon_button_round_yellow1"
+            android:layout_width="27.0dp"
+            android:layout_height="32.0dp"
+            android:id="@+id/imgbtn3"
+            android:cropToPadding="false"
+            android:scaleType="centerInside"
+            style="@android:style/Animation"
+            android:background="@android:color/white"
+            android:clickable="true"
+            android:soundEffectsEnabled="true" />
+        <TextView
+            android:text="User Profile Setup"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="168.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView1"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout4">
+        <ImageButton
+            android:src="@drawable/icon_button_round_black1"
+            android:layout_width="27.0dp"
+            android:layout_height="32.0dp"
+            android:id="@+id/imgbtn4"
+            android:cropToPadding="false"
+            android:scaleType="centerInside"
+            style="@android:style/Animation"
+            android:background="@android:color/white"
+            android:clickable="true"
+            android:soundEffectsEnabled="true" />
+        <TextView
+            android:text="Setup Invoice Number"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="168.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView1"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+</LinearLayout>

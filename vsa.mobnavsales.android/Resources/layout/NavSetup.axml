@@ -2,38 +2,45 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:background="@drawable/WP_Office10">
     <TextView
         android:text="Nav Web Service Name"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView1" />
+        android:id="@+id/textView1"
+        android:textColor="@android:color/black" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txtwebservice" />
+        android:id="@+id/txtwebservice"
+        android:textColor="@android:color/black" />
     <TextView
         android:text="Nav Web Server"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView2" />
+        android:id="@+id/textView2"
+        android:textColor="@android:color/black" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txtwebserver" />
+        android:id="@+id/txtwebserver"
+        android:textColor="@android:color/black" />
     <TextView
         android:text="Nav Port"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView3" />
+        android:id="@+id/textView3"
+        android:textColor="@android:color/black" />
     <EditText
         android:inputType="number"
-        android:layout_width="match_parent"
+        android:layout_width="210.5dp"
         android:layout_height="wrap_content"
-        android:id="@+id/txtport" />
+        android:id="@+id/txtport"
+        android:textColor="@android:color/black" />
     <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
@@ -45,11 +52,7 @@
             android:text="Confirm"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/btnsave" />
-        <Button
-            android:text="Cancel"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/btncancel" />
+            android:id="@+id/btnsave"
+            android:textColor="@android:color/black" />
     </LinearLayout>
 </LinearLayout>

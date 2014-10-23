@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:background="@drawable/WP_Office10">
     <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
@@ -11,16 +12,17 @@
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout1">
         <ImageView
-            android:src="@android:drawable/ic_menu_gallery"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:src="@drawable/Icon"
+            android:layout_width="41.0dp"
+            android:layout_height="34.5dp"
             android:id="@+id/imageView1" />
         <TextView
             android:text="Mobile Navigation Sales"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="wrap_content"
+            android:layout_width="337.0dp"
             android:layout_height="match_parent"
-            android:id="@+id/textView1" />
+            android:id="@+id/textView1"
+            android:textColor="@android:color/black" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -28,38 +30,79 @@
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout2" />
-    <LinearLayout
-        android:orientation="horizontal"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout3" />
-    <LinearLayout
-        android:orientation="horizontal"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout4" />
-    <LinearLayout
-        android:orientation="horizontal"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout5">
-        <Button
-            android:text="Button"
+        android:id="@+id/linearLayout2">
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/button1" />
+            android:id="@+id/imageView2" />
+        <TextView
+            android:text="-"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="332.5dp"
+            android:layout_height="match_parent"
+            android:id="@+id/txtstatus"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout3">
+        <TextView
+            android:text="User Id       用户名"
+            android:layout_width="69.5dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView2"
+            android:textColor="@android:color/black" />
+        <EditText
+            android:layout_width="292.5dp"
+            android:layout_height="match_parent"
+            android:id="@+id/txtuserid"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout4">
+        <TextView
+            android:text="Password 密码"
+            android:layout_width="69.5dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView3"
+            android:textColor="@android:color/black" />
+        <EditText
+            android:layout_width="288.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/txtpass"
+            android:password="true"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout5"
+        android:gravity="center_horizontal">
+        <Button
+            android:text="Login"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/btnlogin" />
         <Button
             android:text="Setup"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/btnsetup" />
+            android:id="@+id/btnsetup"
+            android:visibility="visible"
+            android:enabled="false" />
         <Button
             android:text="Button"
             android:layout_width="wrap_content"

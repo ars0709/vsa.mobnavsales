@@ -45,6 +45,7 @@ namespace vsa.mobnavsales.android
          
             // set our layout to be the home screen
             SetContentView(Resource.Layout.NavSetup);
+
             Button xbtnsave = FindViewById<Button>(Resource.Id.btnsave);
             
             xbtnsave.Click += xbtnsave_click;
@@ -54,9 +55,9 @@ namespace vsa.mobnavsales.android
             }
 
 
-            broadcastRecv = new DataReceiver();
-            broadcastRecv.actionRecv += OnDataReceived;
-            RegisterReceiver(broadcastRecv, new IntentFilter(Common.ACTION_NEW_DATA));
+
+              LoadDetail();
+            
         }
 
 
@@ -74,28 +75,16 @@ namespace vsa.mobnavsales.android
         protected override void OnResume()
         {
             base.OnResume();
-            RegisterReceiver(broadcastRecv, new IntentFilter(Common.ACTION_NEW_DATA));
+             
         }
 
         protected override void OnPause()
         {
             base.OnPause();
-            UnregisterReceiver(broadcastRecv);
+           
         }
 
-        void OnDataReceived(Context arg1, Intent arg2)
-        {
-            if (arg2 != null)
-            {
-                EditID = arg2.GetIntExtra("EditID", -1);
-                if (EditID <= 0)
-                    cleanobject();
-                else
-                    LoadDetail();
-
-            }
-        }
-
+       
         void RefreshData(bool State)
         {
             var NewData = new Intent(Common.ACTION_REFRESH_DATA);
@@ -123,7 +112,7 @@ namespace vsa.mobnavsales.android
             else
             {
                 //update
-                string[] FieldNameID = { "_ID" };
+                string[] FieldNameID = { "ID" };
                 object[] FieldDataID = { EditID };
                 string[] FieldName = { "NavWebServiceName", "NavWebServer", "NavPort" };
                 object[] FieldData = { xtxtws.Text, xtxtwserver.Text, xtxtwport.Text };
@@ -134,7 +123,7 @@ namespace vsa.mobnavsales.android
             if (v_result)
             {
                 v_message = "Nav Network Credential Created.";
-                Activity tabs = (Activity)this.Parent;
+                
                
                 RefreshData(true);
             }
@@ -156,11 +145,12 @@ namespace vsa.mobnavsales.android
                 EditText xtxtwserver = FindViewById<EditText>(Resource.Id.txtwebserver);
                 EditText xtxtwport = FindViewById<EditText>(Resource.Id.txtport);
 
-                DataTable dt = db.RetrieveData("select * from NavNetworkCredential where id=" + EditID);
+                DataTable dt = db.RetrieveData("select * from NavNetworkCredential");
                 if (dt != null && dt.Rows.Count > 0)
                 {
                     foreach (DataRow dr in dt.Rows)
                     {
+                        EditID = Convert.ToInt32 ( dr["id"].ToString()) ;
                         xtxtws.Text = dr["NavWebServiceName"].ToString();
                         xtxtwserver.Text = dr["NavWebServer"].ToString();
                         xtxtwport.Text = dr["NavPort"].ToString();
