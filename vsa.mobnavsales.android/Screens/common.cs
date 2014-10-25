@@ -23,9 +23,21 @@ namespace vsa.mobnavsales.android
             DBSqliteFunction db = new DBSqliteFunction(DBSqliteFunction.GetDBFilePath("MobNavSales.db3"));
             if (!db.isDBExists)
             {
-                db.ExecuteNonQuery("CREATE TABLE [NavNetworkCredential] (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, NavWebServiceName NTEXT,NavWebServer NTEXT,NavPort INT,NavCompany NTEXT, Note NTEXT, NavDefaultCredential INT, NavFormAuthentication INT, NavLoginDomain NTEXT, NavUserName NTEXT , NavUserPwd NTEXT, UseSetupCompany INT);");
+                //db.ExecuteNonQuery("CREATE TABLE IF NOT EXISTS [NavNetworkCredential] (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, NavWebServiceName NTEXT,NavWebServer NTEXT,NavPort INT,NavCompany NTEXT, Note NTEXT, NavDefaultCredential INT, NavFormAuthentication INT, NavLoginDomain NTEXT, NavUserName NTEXT , NavUserPwd NTEXT, UseSetupCompany INT);");
+                //db.ExecuteNonQuery("CREATE TABLE IF NOT EXISTS [OfflineModeCompany] (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, OfflineCompanyName NTEXT, NOTE NTEXT);");
+
             }
+            else
+            {
+                db.ExecuteNonQuery("CREATE TABLE IF NOT EXISTS [NavNetworkCredential] (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, NavWebServiceName NTEXT,NavWebServer NTEXT,NavPort INT,NavCompany NTEXT, Note NTEXT, NavDefaultCredential INT, NavFormAuthentication INT, NavLoginDomain NTEXT, NavUserName NTEXT , NavUserPwd NTEXT, UseSetupCompany INT);");
+                db.ExecuteNonQuery("CREATE TABLE IF NOT EXISTS [OfflineModeCompany] (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, OfflineCompanyName NTEXT, NOTE NTEXT);");
+
+            }
+
+
             return db;
         }
+
+            
     }
 }

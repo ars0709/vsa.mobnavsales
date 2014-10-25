@@ -4,12 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+
+
 
 namespace vsa.mobnavsales.android.Screens
 {
@@ -104,7 +100,7 @@ namespace vsa.mobnavsales.android.Screens
 
         public class CodeUnitService
         {
-            public static wsPDACuGenWebServices.PDA_General_Web_Service_PortClient GetServcie()
+            public static  wsPDACuGenWebServices.PDA_General_Web_Service_PortClient GetServcie()
             {
                 //wsPDACuGenWebServices.PDA_General_Web_Service_PortClient _ws = new wsPDACuGenWebServices.PDA_General_Web_Service_PortClient(WebServiceBinding._basicHttpBinding(EnumWSType.CodeUnit, "CRONUS International Ltd.", "PDA_General_Web_Service"), new System.ServiceModel.EndpointAddress(_webserviceurl));
 
@@ -132,7 +128,6 @@ namespace vsa.mobnavsales.android.Screens
 
             public class Listing
             {
-
                 public static wsSystemService.SystemService_PortClient GetService()
                 {
                     //** using NAV SystemService **

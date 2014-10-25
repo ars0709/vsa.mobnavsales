@@ -35,6 +35,7 @@ namespace vsa.mobnavsales.android.Screens
             string g_strDomain;
             string g_strUsername;
             string g_strPassword;
+
             protected override void OnCreate(Bundle bundle)
             {
                 base.OnCreate(bundle);

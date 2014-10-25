@@ -86,11 +86,14 @@ namespace vsa.mobnavsales.android
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f060016
+			public const int btnconfirm = 2131099670;
+			
 			// aapt resource value: 0x7f06000d
 			public const int btnlogin = 2131099661;
 			
-			// aapt resource value: 0x7f060017
-			public const int btnsave = 2131099671;
+			// aapt resource value: 0x7f06001a
+			public const int btnsave = 2131099674;
 			
 			// aapt resource value: 0x7f06000e
 			public const int btnsetup = 2131099662;
@@ -140,11 +143,17 @@ namespace vsa.mobnavsales.android
 			// aapt resource value: 0x7f06000a
 			public const int textView3 = 2131099658;
 			
+			// aapt resource value: 0x7f060014
+			public const int txtcompanyname = 2131099668;
+			
+			// aapt resource value: 0x7f060015
+			public const int txtnote = 2131099669;
+			
 			// aapt resource value: 0x7f06000b
 			public const int txtpass = 2131099659;
 			
-			// aapt resource value: 0x7f060016
-			public const int txtport = 2131099670;
+			// aapt resource value: 0x7f060019
+			public const int txtport = 2131099673;
 			
 			// aapt resource value: 0x7f060005
 			public const int txtstatus = 2131099653;
@@ -152,11 +161,11 @@ namespace vsa.mobnavsales.android
 			// aapt resource value: 0x7f060008
 			public const int txtuserid = 2131099656;
 			
-			// aapt resource value: 0x7f060015
-			public const int txtwebserver = 2131099669;
+			// aapt resource value: 0x7f060018
+			public const int txtwebserver = 2131099672;
 			
-			// aapt resource value: 0x7f060014
-			public const int txtwebservice = 2131099668;
+			// aapt resource value: 0x7f060017
+			public const int txtwebservice = 2131099671;
 			
 			static Id()
 			{
@@ -178,10 +187,13 @@ namespace vsa.mobnavsales.android
 			public const int navadmin = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int NavSetup = 2130903042;
+			public const int NavOffModeCompany = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int ViewAdapt = 2130903043;
+			public const int NavSetup = 2130903043;
+			
+			// aapt resource value: 0x7f030004
+			public const int ViewAdapt = 2130903044;
 			
 			static Layout()
 			{
