@@ -2,28 +2,33 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:background="@drawable/WP_Office10">
     <TextView
         android:text="Company Name"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView1" />
+        android:id="@+id/textView1"
+        android:textColor="@android:color/black" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txtcompanyname" />
+        android:id="@+id/txtcompanyname"
+        android:textColor="@android:color/black" />
     <TextView
         android:text="Note"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView2" />
+        android:id="@+id/textView2"
+        android:textColor="@android:color/black" />
     <EditText
         android:inputType="textMultiLine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/txtnote" />
+        android:id="@+id/txtnote"
+        android:textColor="@android:color/black" />
     <Button
         android:text="Confirm"
         android:layout_width="match_parent"

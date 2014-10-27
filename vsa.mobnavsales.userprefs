@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.adr1" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="vsa.mobnavsales.android\Screens\NavOnlineMode.cs">
+    <Files>
+      <File FileName="vsa.mobnavsales.android\Web References\wsPDACuGenWebServices\Reference.cs" Line="55" Column="55" />
+      <File FileName="vsa.mobnavsales.android\Screens\NavOnlineMode.cs" Line="50" Column="50" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <RunToCursorBreakpoint file="F:\Documents\01. Development\02. Source\VSA PROJECT\vsa.mobnavsales_2014\vsa.mobnavsales\vsa.mobnavsales.android\Screens\NavOnlineMode.cs" line="103" column="84" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

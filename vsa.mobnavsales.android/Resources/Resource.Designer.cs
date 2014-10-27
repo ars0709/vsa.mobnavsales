@@ -26,8 +26,8 @@ namespace vsa.mobnavsales.android
 		
 		public static void UpdateIdValues()
 		{
-			global::Gravicode.Library.Resource.String.ApplicationName = global::vsa.mobnavsales.android.Resource.String.ApplicationName;
-			global::Gravicode.Library.Resource.String.Hello = global::vsa.mobnavsales.android.Resource.String.Hello;
+			global::vsa.mobnavsales.Library.Resource.String.ApplicationName = global::vsa.mobnavsales.android.Resource.String.ApplicationName;
+			global::vsa.mobnavsales.Library.Resource.String.Hello = global::vsa.mobnavsales.android.Resource.String.Hello;
 		}
 		
 		public partial class Attribute

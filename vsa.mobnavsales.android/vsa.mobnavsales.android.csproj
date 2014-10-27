@@ -3,8 +3,6 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{D854C75B-3A3C-46D6-B61A-460267E9BD22}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
@@ -15,8 +13,6 @@
     <AndroidApplication>true</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <AndroidUseLatestPlatformSdk>
-    </AndroidUseLatestPlatformSdk>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <TargetFrameworkVersion>v4.2</TargetFrameworkVersion>
   </PropertyGroup>
@@ -28,7 +24,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -39,7 +34,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
-    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
@@ -58,22 +52,13 @@
     <Compile Include="Screens\NavAdmin.cs" />
     <Compile Include="Screens\common.cs" />
     <Compile Include="Screens\DataReceiver.cs" />
+    <Compile Include="Screens\NavOffModeCompany.cs" />
     <Compile Include="Screens\NavOnlineMode.cs" />
     <Compile Include="Screens\navsetup.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Screens\homescreens.cs" />
     <Compile Include="Screens\ViewAdapt.cs" />
-    <Compile Include="Web References\wsPDACuGenWebServices\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
-    <Compile Include="Web References\wsPDASalesHeader\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.map</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -90,19 +75,6 @@
     <AndroidResource Include="Resources\layout\NavOffModeCompany.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <None Include="Web References\wsPDACuGenWebServices\PDA_General_Web_Service.wsdl" />
-    <None Include="Web References\wsPDACuGenWebServices\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Web References\wsPDASalesHeader\PDA_Sales_Header_Card.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
-    <None Include="Web References\wsPDASalesHeader\PDA_Sales_Header_Card.wsdl" />
-    <None Include="Web References\wsPDASalesHeader\Reference.map">
-      <Generator>MSDiscoCodeGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
@@ -125,40 +97,9 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\vsa.mobsales.library\vsa.mobnavsales.Library.csproj">
-      <Project>{e44a23b9-4914-44aa-b58f-2a1ad4de6380}</Project>
+      <Project>{E44A23B9-4914-44AA-B58F-2A1AD4DE6380}</Project>
       <Name>vsa.mobnavsales.Library</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WebReferences Include="Web References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WebReferenceUrl Include="C:\Users\Aris\Documents\MobileNavSalesCCH\MobileNavSalesCCH\Service References\wsPDACuGenWebServices\PDA_General_Web_Service.wsdl">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\wsPDACuGenWebServices\</RelPath>
-      <UpdateFromURL>C:\Users\Aris\Documents\MobileNavSalesCCH\MobileNavSalesCCH\Service References\wsPDACuGenWebServices\PDA_General_Web_Service.wsdl</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>
-      </CachedAppSettingsObjectName>
-      <CachedSettingsPropName>
-      </CachedSettingsPropName>
-    </WebReferenceUrl>
-    <WebReferenceUrl Include="C:\Users\Aris\Documents\MobileNavSalesCCH\MobileNavSalesCCH\Service References\wsPDASalesHeader\PDA_Sales_Header_Card.wsdl">
-      <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\wsPDASalesHeader\</RelPath>
-      <UpdateFromURL>C:\Users\Aris\Documents\MobileNavSalesCCH\MobileNavSalesCCH\Service References\wsPDASalesHeader\PDA_Sales_Header_Card.wsdl</UpdateFromURL>
-      <ServiceLocationURL>
-      </ServiceLocationURL>
-      <CachedDynamicPropName>
-      </CachedDynamicPropName>
-      <CachedAppSettingsObjectName>
-      </CachedAppSettingsObjectName>
-      <CachedSettingsPropName>
-      </CachedSettingsPropName>
-    </WebReferenceUrl>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -168,4 +109,7 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <WebReferences Include="Web References" />
+  </ItemGroup>
 </Project>

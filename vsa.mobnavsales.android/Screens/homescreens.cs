@@ -115,7 +115,6 @@ namespace vsa.mobnavsales.android.Screens
                                 else
                                 {
                                 v_message = "Please enter Password (请输入密码), Password (密码)";
-                                
                                     Toast a = Toast.MakeText(this.BaseContext, v_message, ToastLength.Short);
                                     a.Show();
                                 

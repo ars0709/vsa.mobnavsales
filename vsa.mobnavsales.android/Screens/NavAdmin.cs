@@ -51,6 +51,11 @@ namespace vsa.mobnavsales.android.Screens
                 StartActivity(typeof(navsetup));
             };
 
+            ximgoffline = FindViewById<ImageButton>(Resource.Id.imgbtn2);
+            ximgoffline.Click += (sender, e) =>
+            {
+                StartActivity(typeof(navsetup));
+            };
 
         }
     }

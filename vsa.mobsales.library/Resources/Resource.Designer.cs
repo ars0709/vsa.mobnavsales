@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("Gravicode.Library.Resource", IsApplication=false)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("vsa.mobnavsales.Library.Resource", IsApplication=false)]
 
-namespace Gravicode.Library
+namespace vsa.mobnavsales.Library
 {
 	
 	
