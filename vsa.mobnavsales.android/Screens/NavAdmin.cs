@@ -20,6 +20,8 @@ namespace vsa.mobnavsales.android.Screens
         protected ImageButton ximgoffline = null;
         protected ImageButton xuserprofile = null;
         protected ImageButton xinvoice = null;
+        protected ImageButton xeditco = null;
+
 
 
         protected override void OnCreate(Bundle bundle)
@@ -54,9 +56,11 @@ namespace vsa.mobnavsales.android.Screens
             ximgoffline = FindViewById<ImageButton>(Resource.Id.imgbtn2);
             ximgoffline.Click += (sender, e) =>
             {
-                StartActivity(typeof(navsetup));
+                StartActivity(typeof(NavOffModeCompanyGroup));
             };
 
+
+             
         }
     }
 }

@@ -1,9 +1,8 @@
 using System;
-using System.Data;
-
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 
 using Android.App;
 using Android.Content;
@@ -13,12 +12,13 @@ using Android.Views;
 using Android.Widget;
 using Android.Graphics;
 using vsa.mobnavsales.Library;
- 
+
 
 namespace vsa.mobnavsales.android.Screens
 {
-    [Activity(Label = "Edit Offline Company Setup")]
-    public class NavOffModeCompany : Activity
+    [Activity(Label = "User Credential Setup")]
+ 
+     public class NavUserDeviceProfile : Activity
     {
 
         IFungsiDB db = null;
@@ -46,7 +46,7 @@ namespace vsa.mobnavsales.android.Screens
             }
 
 
-            SetContentView(Resource.Layout.NavOffModeCompany);
+            SetContentView(Resource.Layout.NavUserDeviceProfile);
             Button xbtnconfirm = FindViewById<Button>(Resource.Id.btnconfirm);
 
             xbtnconfirm.Click += xbtnconfirm_click;
@@ -244,7 +244,4 @@ namespace vsa.mobnavsales.android.Screens
          }
 
 
-
-        
-    }
 }

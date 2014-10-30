@@ -5,6 +5,14 @@
     android:layout_height="fill_parent"
     android:background="@drawable/WP_Office10">
     <TextView
+        android:text="Offline Company Setup"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:textColor="@android:color/black"
+        android:background="@android:color/darker_gray" />
+    <TextView
         android:text="Company Name"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_width="match_parent"
@@ -31,7 +39,7 @@
         android:textColor="@android:color/black" />
     <Button
         android:text="Confirm"
+        android:id="@+id/btnconfirm"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnconfirm" />
+        android:layout_height="wrap_content" />
 </LinearLayout>

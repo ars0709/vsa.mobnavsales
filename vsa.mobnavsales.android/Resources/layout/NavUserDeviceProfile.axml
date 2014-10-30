@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TextView
+        android:text="User Credential Setup"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:layout_marginBottom="16.0dp" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+        <TextView
+            android:text="Domain Name"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="115.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView2" />
+        <EditText
+            android:layout_width="221.5dp"
+            android:layout_height="match_parent"
+            android:id="@+id/txtdomain" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+        <TextView
+            android:text="Domain User Name"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="115.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView3" />
+        <EditText
+            android:layout_width="221.5dp"
+            android:layout_height="match_parent"
+            android:id="@+id/txtdomainuser" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+        <TextView
+            android:text="User Password"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="115.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView4" />
+        <EditText
+            android:inputType="textPassword"
+            android:layout_width="218.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/txtuser" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+        <TextView
+            android:text="Employee Name"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="115.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView5" />
+        <EditText
+            android:layout_width="221.5dp"
+            android:layout_height="match_parent"
+            android:id="@+id/txtemployee" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1">
+        <TextView
+            android:text="NRIC"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_width="115.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView6" />
+        <EditText
+            android:layout_width="221.5dp"
+            android:layout_height="match_parent"
+            android:id="@+id/txtnric" />
+    </LinearLayout>
+    <Button
+        android:text="Confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnconfirm" />
+</LinearLayout>

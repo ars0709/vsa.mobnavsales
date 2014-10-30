@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="50px"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <ImageView
+        android:src="@android:drawable/ic_menu_gallery"
+        android:layout_width="50px"
+        android:layout_height="50px"
+        android:id="@+id/dtEdit" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/linearLayout1">
+        <TextView
+            android:text="Text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="6pt"
+            android:id="@+id/dtCompanyName" />
+        <TextView
+            android:text="Text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dtCompanyNote"
+            android:textSize="4pt" />
+    </LinearLayout>
+</LinearLayout>

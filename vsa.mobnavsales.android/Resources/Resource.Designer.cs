@@ -68,10 +68,13 @@ namespace vsa.mobnavsales.android
 			public const int icon_button_round_yellow1 = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int monoandroidsplash = 2130837511;
+			public const int icon_edit = 2130837511;
 			
 			// aapt resource value: 0x7f020008
-			public const int WP_Office10 = 2130837512;
+			public const int monoandroidsplash = 2130837512;
+			
+			// aapt resource value: 0x7f020009
+			public const int WP_Office10 = 2130837513;
 			
 			static Drawable()
 			{
@@ -86,20 +89,32 @@ namespace vsa.mobnavsales.android
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060016
-			public const int btnconfirm = 2131099670;
+			// aapt resource value: 0x7f06001d
+			public const int BtnAdd = 2131099677;
+			
+			// aapt resource value: 0x7f060017
+			public const int btnconfirm = 2131099671;
 			
 			// aapt resource value: 0x7f06000d
 			public const int btnlogin = 2131099661;
 			
-			// aapt resource value: 0x7f06001a
-			public const int btnsave = 2131099674;
+			// aapt resource value: 0x7f06000f
+			public const int btnoffline = 2131099663;
+			
+			// aapt resource value: 0x7f060021
+			public const int btnsave = 2131099681;
 			
 			// aapt resource value: 0x7f06000e
 			public const int btnsetup = 2131099662;
 			
-			// aapt resource value: 0x7f06000f
-			public const int button2 = 2131099663;
+			// aapt resource value: 0x7f06001a
+			public const int dtCompanyName = 2131099674;
+			
+			// aapt resource value: 0x7f06001b
+			public const int dtCompanyNote = 2131099675;
+			
+			// aapt resource value: 0x7f060019
+			public const int dtEdit = 2131099673;
 			
 			// aapt resource value: 0x7f060001
 			public const int imageView1 = 2131099649;
@@ -134,6 +149,12 @@ namespace vsa.mobnavsales.android
 			// aapt resource value: 0x7f06000c
 			public const int linearLayout5 = 2131099660;
 			
+			// aapt resource value: 0x7f06001c
+			public const int lstCompany = 2131099676;
+			
+			// aapt resource value: 0x7f060018
+			public const int tabHost1 = 2131099672;
+			
 			// aapt resource value: 0x7f060002
 			public const int textView1 = 2131099650;
 			
@@ -144,28 +165,52 @@ namespace vsa.mobnavsales.android
 			public const int textView3 = 2131099658;
 			
 			// aapt resource value: 0x7f060014
-			public const int txtcompanyname = 2131099668;
+			public const int textView4 = 2131099668;
+			
+			// aapt resource value: 0x7f060025
+			public const int textView5 = 2131099685;
+			
+			// aapt resource value: 0x7f060027
+			public const int textView6 = 2131099687;
 			
 			// aapt resource value: 0x7f060015
-			public const int txtnote = 2131099669;
+			public const int txtcompanyname = 2131099669;
+			
+			// aapt resource value: 0x7f060022
+			public const int txtdomain = 2131099682;
+			
+			// aapt resource value: 0x7f060023
+			public const int txtdomainuser = 2131099683;
+			
+			// aapt resource value: 0x7f060026
+			public const int txtemployee = 2131099686;
+			
+			// aapt resource value: 0x7f060016
+			public const int txtnote = 2131099670;
+			
+			// aapt resource value: 0x7f060028
+			public const int txtnric = 2131099688;
 			
 			// aapt resource value: 0x7f06000b
 			public const int txtpass = 2131099659;
 			
-			// aapt resource value: 0x7f060019
-			public const int txtport = 2131099673;
+			// aapt resource value: 0x7f060020
+			public const int txtport = 2131099680;
 			
 			// aapt resource value: 0x7f060005
 			public const int txtstatus = 2131099653;
 			
+			// aapt resource value: 0x7f060024
+			public const int txtuser = 2131099684;
+			
 			// aapt resource value: 0x7f060008
 			public const int txtuserid = 2131099656;
 			
-			// aapt resource value: 0x7f060018
-			public const int txtwebserver = 2131099672;
+			// aapt resource value: 0x7f06001f
+			public const int txtwebserver = 2131099679;
 			
-			// aapt resource value: 0x7f060017
-			public const int txtwebservice = 2131099671;
+			// aapt resource value: 0x7f06001e
+			public const int txtwebservice = 2131099678;
 			
 			static Id()
 			{
@@ -190,10 +235,28 @@ namespace vsa.mobnavsales.android
 			public const int NavOffModeCompany = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int NavSetup = 2130903043;
+			public const int NavOffModeCompanyGroup = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int ViewAdapt = 2130903044;
+			public const int NavOffModeCompanyItem = 2130903044;
+			
+			// aapt resource value: 0x7f030005
+			public const int NavOffModeCompanyList = 2130903045;
+			
+			// aapt resource value: 0x7f030006
+			public const int NavSetup = 2130903046;
+			
+			// aapt resource value: 0x7f030007
+			public const int NavUserDeviceProfile = 2130903047;
+			
+			// aapt resource value: 0x7f030008
+			public const int NavUserDeviceProfileGroup = 2130903048;
+			
+			// aapt resource value: 0x7f030009
+			public const int NavUserDeviceProfileItem = 2130903049;
+			
+			// aapt resource value: 0x7f03000a
+			public const int NavUserDeviceProfileList = 2130903050;
 			
 			static Layout()
 			{

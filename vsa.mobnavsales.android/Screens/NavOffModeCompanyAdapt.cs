@@ -10,14 +10,13 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using System.Data;
-
 namespace vsa.mobnavsales.android.Screens
 {
-    public class ViewAdapt : BaseAdapter<DataRow>
+    public class NavOffModeCompanyAdapt : BaseAdapter<DataRow>
     {
         DataTable items;
         Activity context;
-        public ViewAdapt(Activity context, DataTable items)
+        public NavOffModeCompanyAdapt(Activity context, DataTable items)
             : base()
         {
             this.context = context;
@@ -39,10 +38,10 @@ namespace vsa.mobnavsales.android.Screens
         {
             View view = convertView; // re-use an existing view, if one is available
             if (view == null) // otherwise create a new one
-                view = context.LayoutInflater.Inflate(Resource.Layout.ViewAdapt, null);
-            view.FindViewById<TextView>(Resource.Id.textView1).Text = items.Rows[position]["NavWebServiceName"].ToString();
-            view.FindViewById<TextView>(Resource.Id.textView2).Text = items.Rows[position]["NavWebServer"].ToString();
-            view.FindViewById<TextView>(Resource.Id.textView3).Text = items.Rows[position]["NavPort"].ToString();
+                view = context.LayoutInflater.Inflate(Resource.Layout.NavOffModeCompanyItem, null);
+            view.FindViewById<TextView>(Resource.Id.dtCompanyName).Text = items.Rows[position]["OfflineCompanyName"].ToString();
+            view.FindViewById<TextView>(Resource.Id.dtCompanyNote).Text = items.Rows[position]["Note"].ToString();
+            view.FindViewById<ImageView>(Resource.Id.dtEdit).SetImageResource(Resource.Drawable.icon_edit);            
             return view;
         }
     }

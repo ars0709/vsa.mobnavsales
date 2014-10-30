@@ -18,7 +18,7 @@ using System.Net;
 
 namespace vsa.mobnavsales.android.Screens
 {
-    [Activity(Label = "Mobile Navsales Main", MainLauncher = true, Icon="@drawable/icon")]
+    [Activity(Label = "Mobile Sales Management System", MainLauncher = true, Icon="@drawable/icon")]
     public class homescreens : Activity
     {
 
@@ -150,20 +150,21 @@ namespace vsa.mobnavsales.android.Screens
                             else
                             {
                                 //-- allow to setup Nav Configuration here:
-                                xbtnsetup.Enabled =true ;
+                                //xbtnsetup.Enabled =true ;
+                                xbtnsetup.Visibility = ViewStates.Visible ;
                                
-                            }
+                                }
                         }
                         else
                         {
                             //RingProgress.IsActive = false;
-                            xbtnsetup.Enabled = true;
+                            xbtnsetup.Visibility = ViewStates.Visible;
                         }
                     }
                     else
                     {
                         //RingProgress.IsActive = false;
-                        xbtnsetup.Enabled = true;
+                        xbtnsetup.Visibility = ViewStates.Visible;
                     }
                 } //end
                

@@ -15,7 +15,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txtwebservice"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        android:textColorHighlight="@android:color/black" />
     <TextView
         android:text="Nav Web Server"
         android:textAppearance="?android:attr/textAppearanceMedium"

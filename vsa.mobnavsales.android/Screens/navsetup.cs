@@ -111,6 +111,8 @@ namespace vsa.mobnavsales.android
             }
             else
             {
+
+                
                 //update
                 string[] FieldNameID = { "ID" };
                 object[] FieldDataID = { EditID };

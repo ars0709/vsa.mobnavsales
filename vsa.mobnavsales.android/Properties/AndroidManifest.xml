@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="Mobile_Navision_Sales.Mobile_Navision_Sales" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="MobNav.MobNav" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
 	<uses-sdk />
-	<application android:label="Mobile Navision Sales" android:icon="@drawable/Icon"></application>
+	<application android:label="Mobile Management System" android:icon="@drawable/Icon"></application>
 </manifest>
