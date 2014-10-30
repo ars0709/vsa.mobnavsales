@@ -11,13 +11,16 @@ using Android.Views;
 using Android.Widget;
 using System.Data;
 
+
 namespace vsa.mobnavsales.android.Screens
 {
-    public class NavOffModeCompanyAdapt : BaseAdapter<DataRow>
+   
+   
+    public class NavUserDeviceProfilceAdapt : BaseAdapter<DataRow>
     {
-        DataTable items;
+         DataTable items;
         Activity context;
-        public NavOffModeCompanyAdapt(Activity context, DataTable items)
+        public NavUserDeviceProfilceAdapt(Activity context, DataTable items)
             : base()
         {
             this.context = context;
@@ -39,9 +42,9 @@ namespace vsa.mobnavsales.android.Screens
         {
             View view = convertView; // re-use an existing view, if one is available
             if (view == null) // otherwise create a new one
-                view = context.LayoutInflater.Inflate(Resource.Layout.NavOffModeCompanyItem, null);
-            view.FindViewById<TextView>(Resource.Id.dtCompanyName).Text = items.Rows[position]["OfflineCompanyName"].ToString();
-            view.FindViewById<TextView>(Resource.Id.dtCompanyNote).Text = items.Rows[position]["Note"].ToString();
+                view = context.LayoutInflater.Inflate(Resource.Layout.NavUserDeviceProfileItem, null);
+            view.FindViewById<TextView>(Resource.Id.dtCompanyName).Text = items.Rows[position]["UserLoginDomain"].ToString();
+            view.FindViewById<TextView>(Resource.Id.dtCompanyNote).Text = items.Rows[position]["Username"].ToString();
             view.FindViewById<ImageView>(Resource.Id.dtEdit).SetImageResource(Resource.Drawable.icon_edit);            
             return view;
         }

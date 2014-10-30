@@ -59,6 +59,12 @@ namespace vsa.mobnavsales.android.Screens
                 StartActivity(typeof(NavOffModeCompanyGroup));
             };
 
+            xuserprofile = FindViewById<ImageButton>(Resource.Id.imgbtn3);
+            xuserprofile.Click += (sender, e) =>
+            {
+                StartActivity(typeof(NavUserDeviceProfileGroup));
+            };
+
 
              
         }

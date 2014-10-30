@@ -22,12 +22,12 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textSize="6pt"
-            android:id="@+id/dtCompanyName" />
+            android:id="@+id/dtdomain" />
         <TextView
             android:text="Text"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/dtCompanyNote"
+            android:id="@+id/dtuser"
             android:textSize="4pt" />
     </LinearLayout>
 </LinearLayout>

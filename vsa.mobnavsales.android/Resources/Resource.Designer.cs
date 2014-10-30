@@ -116,6 +116,12 @@ namespace vsa.mobnavsales.android
 			// aapt resource value: 0x7f060019
 			public const int dtEdit = 2131099673;
 			
+			// aapt resource value: 0x7f060029
+			public const int dtdomain = 2131099689;
+			
+			// aapt resource value: 0x7f06002a
+			public const int dtuser = 2131099690;
+			
 			// aapt resource value: 0x7f060001
 			public const int imageView1 = 2131099649;
 			
@@ -151,6 +157,9 @@ namespace vsa.mobnavsales.android
 			
 			// aapt resource value: 0x7f06001c
 			public const int lstCompany = 2131099676;
+			
+			// aapt resource value: 0x7f06002b
+			public const int lstUser = 2131099691;
 			
 			// aapt resource value: 0x7f060018
 			public const int tabHost1 = 2131099672;

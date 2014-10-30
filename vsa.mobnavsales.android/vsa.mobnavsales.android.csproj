@@ -61,6 +61,10 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Screens\homescreens.cs" />
+    <Compile Include="Screens\NavUserDeviceProfilceAdapt.cs" />
+    <Compile Include="Screens\NavUserDeviceProfile.cs" />
+    <Compile Include="Screens\NavUserDeviceProfileGroup.cs" />
+    <Compile Include="Screens\NavUserDeviceProfileList.cs" />
     <Compile Include="Web References\PDA_General_Web_Service\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -86,6 +90,18 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\NavOffModeCompanyItem.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\NavUserDeviceProfile.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\NavUserDeviceProfileGroup.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\NavUserDeviceProfileItem.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\NavUserDeviceProfileList.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <None Include="Web References\PDA_General_Web_Service\PDA_General_Web_Service.wsdl" />

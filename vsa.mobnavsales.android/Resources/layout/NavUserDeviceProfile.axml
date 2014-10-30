@@ -2,14 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:background="@drawable/WP_Office10">
     <TextView
         android:text="User Credential Setup"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView1"
-        android:layout_marginBottom="16.0dp" />
+        android:layout_marginBottom="16.0dp"
+        android:textColor="@android:color/black" />
     <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
@@ -22,11 +24,13 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="115.0dp"
             android:layout_height="match_parent"
-            android:id="@+id/textView2" />
+            android:id="@+id/textView2"
+            android:textColor="@android:color/black" />
         <EditText
             android:layout_width="221.5dp"
             android:layout_height="match_parent"
-            android:id="@+id/txtdomain" />
+            android:id="@+id/txtdomain"
+            android:textColor="@android:color/black" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -40,11 +44,13 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="115.0dp"
             android:layout_height="match_parent"
-            android:id="@+id/textView3" />
+            android:id="@+id/textView3"
+            android:textColor="@android:color/black" />
         <EditText
             android:layout_width="221.5dp"
             android:layout_height="match_parent"
-            android:id="@+id/txtdomainuser" />
+            android:id="@+id/txtdomainuser"
+            android:textColor="@android:color/black" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -58,12 +64,14 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="115.0dp"
             android:layout_height="match_parent"
-            android:id="@+id/textView4" />
+            android:id="@+id/textView4"
+            android:textColor="@android:color/black" />
         <EditText
             android:inputType="textPassword"
             android:layout_width="218.0dp"
             android:layout_height="match_parent"
-            android:id="@+id/txtuser" />
+            android:id="@+id/txtuser"
+            android:textColor="@android:color/black" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -77,11 +85,13 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="115.0dp"
             android:layout_height="match_parent"
-            android:id="@+id/textView5" />
+            android:id="@+id/textView5"
+            android:textColor="@android:color/black" />
         <EditText
             android:layout_width="221.5dp"
             android:layout_height="match_parent"
-            android:id="@+id/txtemployee" />
+            android:id="@+id/txtemployee"
+            android:textColor="@android:color/black" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -95,11 +105,13 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="115.0dp"
             android:layout_height="match_parent"
-            android:id="@+id/textView6" />
+            android:id="@+id/textView6"
+            android:textColor="@android:color/black" />
         <EditText
             android:layout_width="221.5dp"
             android:layout_height="match_parent"
-            android:id="@+id/txtnric" />
+            android:id="@+id/txtnric"
+            android:textColor="@android:color/black" />
     </LinearLayout>
     <Button
         android:text="Confirm"

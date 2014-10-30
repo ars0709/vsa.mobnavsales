@@ -11,23 +11,32 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.Graphics;
+using Android.Telephony;
+ 
+
 using vsa.mobnavsales.Library;
 
 
 namespace vsa.mobnavsales.android.Screens
 {
     [Activity(Label = "User Credential Setup")]
- 
-     public class NavUserDeviceProfile : Activity
+
+    public class NavUserDeviceProfile : Activity
     {
 
         IFungsiDB db = null;
         DataReceiver broadcastRecv;
         int EditID = -1;
-        protected EditText xtxtcompany;
-        protected EditText xtxtnote;
 
-         
+        protected EditText xtxtdomain;
+        protected EditText xtxtdomainname;
+        protected EditText xtxtuser;
+        protected EditText xtxtpass;
+        protected EditText xtxtnric;
+        protected EditText xtxtemployee;
+        string g_strHardwareNtwID;
+        string g_OfflineBillBeginNbr;
+
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -54,28 +63,66 @@ namespace vsa.mobnavsales.android.Screens
             {
                 db = Common.setupDatabase();
             }
+
+            g_strHardwareNtwID = GetHardwareNetID();
+
+
             broadcastRecv = new DataReceiver();
             broadcastRecv.actionRecv += OnDataReceived;
             RegisterReceiver(broadcastRecv, new IntentFilter(Common.ACTION_NEW_DATA));
 
         }
 
+
+        private string GetHardwareNetID()
+        {
+            TelephonyManager telephonyManager = (TelephonyManager)GetSystemService(Context.TelephonyService);
+
+
+            //takes the first network adapter
+            string xDeviceId = telephonyManager.DeviceId.ToString();
+            return xDeviceId;
+
+        }
+
+
         void cleanobject()
         {
-            EditText xtxtcompany = FindViewById<EditText>(Resource.Id.txtcompanyname);
-            EditText xtxtnote = FindViewById<EditText>(Resource.Id.txtnote);
-            xtxtcompany.Text = string.Empty;
-            xtxtnote.Text = string.Empty;
+            xtxtdomain = FindViewById<EditText>(Resource.Id.txtdomain);
+            xtxtdomainname = FindViewById<EditText>(Resource.Id.txtdomainuser);
+            xtxtpass = FindViewById<EditText>(Resource.Id.txtpass);
+            xtxtemployee = FindViewById<EditText>(Resource.Id.txtemployee);
+            xtxtnric = FindViewById<EditText>(Resource.Id.txtnric);
+            xtxtdomain.Text = string.Empty;
+            xtxtdomainname.Text = string.Empty;
+            xtxtpass.Text = string.Empty;
+            xtxtemployee.Text = string.Empty;
+            xtxtnric.Text = string.Empty;
+
+
 
         }
 
         private void xbtnconfirm_click(object sender, EventArgs e)
         {
 
-            CheckDataEnterByUser();             
+            if (string.IsNullOrEmpty(g_strHardwareNtwID))
+            {
+                Toast a = Toast.MakeText(this.BaseContext, "Please get ID first.,No Device Id", ToastLength.Short);
+                a.Show();
+            }
+
+            else
+            {
+
+                CheckDataEnterByUser();
+
+
+
+            }
         }
 
-      
+
 
         protected override void OnResume()
         {
@@ -103,7 +150,7 @@ namespace vsa.mobnavsales.android.Screens
 
             }
         }
-         
+
         void RefreshData(bool State)
         {
             var NewData = new Intent(Common.ACTION_REFRESH_DATA);
@@ -111,93 +158,104 @@ namespace vsa.mobnavsales.android.Screens
             SendBroadcast(NewData);
         }
 
-        
-       
 
-        private   void CheckDataEnterByUser()
+
+
+        private void CheckDataEnterByUser()
         {
-            xtxtcompany = FindViewById<EditText>(Resource.Id.txtcompanyname);
+
+            bool ShowError = false;
+            System.Exception MyException = new Exception();
+
+            xtxtdomain = FindViewById<EditText>(Resource.Id.txtdomain);
+            xtxtdomainname = FindViewById<EditText>(Resource.Id.txtdomainuser);
+            xtxtpass = FindViewById<EditText>(Resource.Id.txtpass);
+            xtxtemployee = FindViewById<EditText>(Resource.Id.txtemployee);
+            xtxtnric = FindViewById<EditText>(Resource.Id.txtnric);
 
             //-- check important fields:
-            if (string.IsNullOrEmpty(xtxtcompany.Text))
+            try
             {
-                  Toast a = Toast.MakeText(this.BaseContext,"Please enter offline company for offline mode transaction, Offline Company name required", ToastLength.Short);
-                     a.Show();
+
+
+                if (string.IsNullOrEmpty(xtxtdomain.Text) || string.IsNullOrEmpty(xtxtdomainname.Text) || string.IsNullOrEmpty(xtxtpass.Text) || string.IsNullOrEmpty(xtxtemployee.Text))
+                {
+                    Toast a = Toast.MakeText(this.BaseContext, "Please enter all required fields. NRIC is optional,Enter required fields", ToastLength.Short);
+                    a.Show();
+                }
+
+                else
+                {
+
+                    string[] strArrayId = g_strHardwareNtwID.Split('-');
+
+                    g_OfflineBillBeginNbr = strArrayId[0];
+
+                    AddDeviceUser();
+
+
+
+                }
             }
- 
-            else
+            catch (Exception ex)
             {
-
-                CheckDuplicateCompany();
-
-               
+                ShowError = true;
+                MyException = ex;
+            }
+            if (ShowError)
+            {
+                Toast a = Toast.MakeText(this.BaseContext, "Encountered error: " + MyException.Message + "Device and User Info", ToastLength.Short);
+                a.Show();
 
             }
         }
 
 
 
-        private  void CheckDuplicateCompany()
-        {
 
-            //-- Dont trim As user can enter space in the front 
-            EditText xtxtcompany = FindViewById<EditText>(Resource.Id.txtcompanyname);
 
-            string Cpy = xtxtcompany.Text;
-            DataTable dt = db.RetrieveData("select * from OfflineModeCompany where OfflineCompanyName='" + xtxtcompany.Text + "'");
-            if (dt != null && dt.Rows.Count > 0)
-            {
-                Toast a = Toast.MakeText(this.BaseContext, "Please enter a different company name.Duplicate Offline Mode Company", ToastLength.Short);
-                 a.Show() ;
-            }
-            else
-            {
-                //add company
-                AddCompany();
 
-            }  
-         }
-        
-        
-         private void AddCompany()
+
+        private void AddDeviceUser()
         {
             bool v_result = false;
+            string strUserDevice = "Device100";
             TabHost host1 = FindViewById<TabHost>(Resource.Id.tabHost1);
-            xtxtcompany = FindViewById<EditText>(Resource.Id.txtcompanyname);
-            xtxtnote = FindViewById<EditText>(Resource.Id.txtnote);
-      
 
-       
+            xtxtdomain = FindViewById<EditText>(Resource.Id.txtdomain);
+            xtxtdomainname = FindViewById<EditText>(Resource.Id.txtdomainuser);
+            xtxtpass = FindViewById<EditText>(Resource.Id.txtpass);
+            xtxtemployee = FindViewById<EditText>(Resource.Id.txtemployee);
+            xtxtnric = FindViewById<EditText>(Resource.Id.txtnric);
 
 
-            if (EditID < 0) 
+
+
+            if (EditID < 0)
             {
                 //New Data 
-                string[] FieldName = { "OfflineCompanyName", "Note" };
-                object[] FieldData = { xtxtcompany.Text, xtxtnote.Text };
-                v_result = db.InsertData("OfflineModeCompany", FieldName, FieldData);
-
-                //v_message = "This company : " + xtxtcompany.Text + " has been created. You can add another company.Offline Mode Company Created";
+                string[] FieldName = { "Username", "EmployeeName", "NRIC", "UserLoginDomain", "UserPwd", "DeviceId", "OfflineBillNo" };
+                object[] FieldData = { xtxtdomainname.Text, xtxtemployee.Text, xtxtnric.Text, xtxtdomain.Text, xtxtpass.Text, g_strHardwareNtwID, g_OfflineBillBeginNbr };
+                v_result = db.InsertData("DeviceUser", FieldName, FieldData);
 
 
-                //RefreshData(true);
             }
             else
             {
                 string[] FieldNameID = { "id" };
                 object[] FieldDataID = { EditID };
-                string[] FieldName = { "OfflineCompanyName", "Note" };
-                object[] FieldData = { xtxtcompany.Text, xtxtnote.Text };
-                v_result = db.UpdateRecord("OfflineModeCompany", FieldNameID, FieldDataID,FieldName, FieldData);
-       
-              //  v_message = "This company : " + xtxtcompany.Text + " has been Failed.Please Try Again";
+                string[] FieldName = { "Username", "EmployeeName", "NRIC", "UserLoginDomain", "UserPwd", "DeviceId", "OfflineBillNo" };
+                object[] FieldData = { xtxtdomainname.Text, xtxtemployee.Text, xtxtnric.Text, xtxtdomain.Text, xtxtpass.Text, g_strHardwareNtwID, g_OfflineBillBeginNbr };
+                v_result = db.UpdateRecord("DeviceUser", FieldNameID, FieldDataID, FieldName, FieldData);
+
+
             }
 
             string v_message = string.Empty;
 
             if (v_result)
             {
-                v_message = "This company : " + xtxtcompany.Text + " has been created. You can add another company.Offline Mode Company Created";
+                v_message = "This Device User : " + xtxtdomainname.Text + " has been created. Quick Access User Profile Created";
                 Activity tabs = (Activity)this.Parent;
                 TabHost tabHost = tabs.FindViewById<TabHost>(Resource.Id.tabHost1);
                 tabHost.CurrentTab = 0;
@@ -205,7 +263,7 @@ namespace vsa.mobnavsales.android.Screens
             }
             else
             {
-                v_message = "This company : " + xtxtcompany.Text + " has been Failed.Please Try Again";
+                v_message = "This Device user : " + xtxtdomainname.Text + " has been Failed.Please Try Again";
             }
             Toast a = Toast.MakeText(this.BaseContext, v_message, ToastLength.Short);
             a.Show();
@@ -214,34 +272,43 @@ namespace vsa.mobnavsales.android.Screens
 
 
 
-         private void LoadDetail()
-         {
-             try
-             {
-                 xtxtcompany = FindViewById<EditText>(Resource.Id.txtcompanyname);
-                 xtxtnote = FindViewById<EditText>(Resource.Id.txtnote);
+        private void LoadDetail()
+        {
+            try
+            {
+                xtxtdomain = FindViewById<EditText>(Resource.Id.txtdomain);
+                xtxtdomainname = FindViewById<EditText>(Resource.Id.txtdomainuser);
+                xtxtpass = FindViewById<EditText>(Resource.Id.txtpass);
+                xtxtemployee = FindViewById<EditText>(Resource.Id.txtemployee);
+                xtxtnric = FindViewById<EditText>(Resource.Id.txtnric);
 
 
-                 DataTable dt = db.RetrieveData("select * from OfflineModeCompany");
-                 if (dt != null && dt.Rows.Count > 0)
-                 {
-                     foreach (DataRow dr in dt.Rows)
-                     {
-                         EditID = Convert.ToInt32(dr["id"].ToString());
-                         xtxtcompany.Text = dr["OfflineCompanyName"].ToString();
-                         xtxtnote.Text = dr["Note"].ToString();
+
+                DataTable dt = db.RetrieveData("select * from DeviceUser");
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        EditID = Convert.ToInt32(dr["id"].ToString());
+                        xtxtdomain.Text = dr["UserLoginDomain"].ToString();
+                        xtxtdomainname.Text = dr["Username"].ToString();
+                        xtxtpass.Text = dr["UserPwd"].ToString();
+                        xtxtemployee.Text = dr["EmployeeName"].ToString();
+                        xtxtnric.Text = dr["NRIC"].ToString();
 
 
-                         break;
-                     }
-                 }
-             }
-             catch (Exception ex)
-             {
-                 Toast a = Toast.MakeText(this.BaseContext, ex.Message + ":" + ex.StackTrace, ToastLength.Short);
-                 a.Show();
-             }
-         }
+
+                        break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Toast a = Toast.MakeText(this.BaseContext, ex.Message + ":" + ex.StackTrace, ToastLength.Short);
+                a.Show();
+            }
+        }
+    }
 
 
 }
